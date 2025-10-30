@@ -1,0 +1,1105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(65%);
+    z-index: -1;
+}
+
+
+/* 🌫 Overlay */
+
+.overlay {
+    background: rgba(0, 0, 0, 0.4);
+    min-height: 100vh;
+    position: relative;
+}
+
+
+/* 🧭 Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+header .logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.4rem;
+}
+
+nav a {
+    padding: 6px 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+nav a:hover,
+nav a.active {
+    background: rgba(255, 255, 255, 0.3);
+    color: #f6b26b;
+    transform: translateY(-2px);
+}
+
+nav a i {
+    margin-right: 6px;
+    font-size: 0.85rem;
+}
+
+
+/* ✨ Content */
+
+.content {
+    padding-top: 120px;
+    text-align: center;
+    min-height: calc(100vh - 200px);
+}
+
+
+/* 🌅 Home */
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+    padding: 0 2rem;
+}
+
+.home-title {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.home-subtitle {
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.home-text {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.6;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+
+/* 🌸 Button */
+
+.look-more {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 12px 30px;
+    border-radius: 25px;
+    background-color: #f6b26b;
+    color: white;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.look-more:hover {
+    background-color: #ffca8b;
+    color: #333;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.destinasi-page {
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.destinasi-title {
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.destinasi-title i {
+    color: #f6b26b;
+    margin-right: 15px;
+}
+
+.destinasi-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+
+/* 🗺️ Grid Layout */
+
+.destinasi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 🏞️ Card */
+
+.destinasi-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.destinasi-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(246, 178, 107, 0.5);
+}
+
+.destinasi-img {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+}
+
+.destinasi-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.destinasi-card:hover .destinasi-img img {
+    transform: scale(1.1);
+}
+
+.destinasi-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #f6b26b;
+    color: #333;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* 🏔️ Info */
+
+.destinasi-info {
+    padding: 1.5rem;
+}
+
+.destinasi-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.destinasi-header h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+}
+
+.location {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    text-align: right;
+    min-width: 80px;
+}
+
+.location i {
+    color: #f6b26b;
+    margin-right: 5px;
+}
+
+.destinasi-info p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    opacity: 0.9;
+}
+
+
+/* 🏷️ Footer Info */
+
+.destinasi-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.price {
+    color: #f6b26b;
+    font-weight: 600;
+}
+
+.price i {
+    margin-right: 5px;
+}
+
+.category {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+
+/* 🧭 Tour Section */
+
+.destinasi-tour {
+    margin: 4rem auto;
+    background: rgba(246, 178, 107, 0.9);
+    color: #333;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.destinasi-tour:hover {
+    transform: scale(1.02);
+    background: rgba(255, 202, 139, 0.9);
+}
+
+.destinasi-tour h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.destinasi-tour h2 i {
+    margin-right: 10px;
+}
+
+.destinasi-tour p {
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+    opacity: 0.9;
+}
+
+.destinasi-tour button {
+    background: #333;
+    color: #f6b26b;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.destinasi-tour button:hover {
+    background: #555;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.destinasi-tour button i {
+    margin-right: 8px;
+}
+
+.kuliner-page {
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.kuliner-title {
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.kuliner-title i {
+    color: #f6b26b;
+    margin-right: 15px;
+}
+
+.kuliner-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+
+/* 🍱 Grid Layout */
+
+.kuliner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 🍰 Card */
+
+.kuliner-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.kuliner-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(246, 178, 107, 0.5);
+}
+
+.kuliner-img {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.kuliner-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.kuliner-card:hover .kuliner-img img {
+    transform: scale(1.1);
+}
+
+.kuliner-tag {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #f6b26b;
+    color: #333;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* 🥢 Info */
+
+.kuliner-info {
+    padding: 1.5rem;
+}
+
+.kuliner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.kuliner-header h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.stars {
+    color: #f6b26b;
+    font-size: 1rem;
+}
+
+.kuliner-info p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+    opacity: 0.9;
+}
+
+
+/* 🍃 Footer Info */
+
+.kuliner-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.kuliner-footer .price {
+    color: #f6b26b;
+}
+
+.kuliner-footer .category {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+
+/* 🧭 Tour Section */
+
+.kuliner-tour {
+    margin: 4rem auto;
+    background: rgba(246, 178, 107, 0.9);
+    color: #333;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.kuliner-tour:hover {
+    transform: scale(1.02);
+    background: rgba(255, 202, 139, 0.9);
+}
+
+.kuliner-tour h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.kuliner-tour h2 i {
+    margin-right: 10px;
+}
+
+.kuliner-tour p {
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+    opacity: 0.9;
+}
+
+.kuliner-tour button {
+    background: #333;
+    color: #f6b26b;
+    border: none;
+    padding: 12px 35px;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.kuliner-tour button:hover {
+    background: #555;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kuliner-tour button i {
+    margin-right: 8px;
+}
+
+
+/* =======================
+   🖼️ GALERI PAGE STYLE
+   ======================= */
+
+.galeri-page {
+    margin-top: 2rem;
+    padding: 0 2rem;
+}
+
+.galeri-title {
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.galeri-title i {
+    color: #f6b26b;
+    margin-right: 15px;
+}
+
+.galeri-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+
+/* 🖼️ Grid Layout */
+
+.galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* 🖼️ Card */
+
+.galeri-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.galeri-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(246, 178, 107, 0.5);
+}
+
+.galeri-img {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+}
+
+.galeri-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.galeri-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.galeri-card:hover .galeri-overlay {
+    opacity: 1;
+}
+
+.galeri-card:hover .galeri-img img {
+    transform: scale(1.1);
+}
+
+.galeri-overlay i {
+    font-size: 2rem;
+    color: #f6b26b;
+    margin-bottom: 10px;
+}
+
+.galeri-overlay p {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.galeri-info {
+    padding: 1.2rem;
+    text-align: left;
+}
+
+.galeri-info h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.galeri-info p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+
+/* 📸 CTA Section */
+
+.galeri-cta {
+    margin: 4rem auto;
+    background: rgba(246, 178, 107, 0.9);
+    color: #333;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.galeri-cta:hover {
+    transform: scale(1.02);
+    background: rgba(255, 202, 139, 0.9);
+}
+
+.galeri-cta h2 {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.galeri-cta h2 i {
+    margin-right: 10px;
+}
+
+.galeri-cta p {
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+    opacity: 0.9;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-buttons button {
+    background: #333;
+    color: #f6b26b;
+    border: none;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.social-buttons button:hover {
+    background: #555;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.social-buttons button i {
+    margin-right: 8px;
+}
+
+
+/* =======================
+   📞 KONTAK PAGE STYLE
+   ======================= */
+
+.kontak-page {
+    margin-top: 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.kontak-title {
+    font-size: 2.2rem;
+    font-weight: 300;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.kontak-title i {
+    color: #f6b26b;
+    margin-right: 15px;
+}
+
+.kontak-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+
+/* 📞 Container */
+
+.kontak-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+
+/* ℹ️ Info Section */
+
+.kontak-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover {
+    border-color: rgba(246, 178, 107, 0.5);
+    transform: translateY(-5px);
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: #f6b26b;
+    margin-top: 5px;
+}
+
+.info-item div h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #f6b26b;
+}
+
+.info-item div p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    line-height: 1.4;
+    margin: 0.2rem 0;
+}
+
+
+/* 📝 Form Section */
+
+.kontak-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.kontak-form h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #f6b26b;
+}
+
+.kontak-form h3 i {
+    margin-right: 10px;
+}
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #f6b26b;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.form-group select option {
+    background: #333;
+    color: white;
+}
+
+.kontak-form button {
+    width: 100%;
+    background: #f6b26b;
+    color: #333;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.kontak-form button:hover {
+    background: #ffca8b;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.kontak-form button i {
+    margin-right: 8px;
+}
+
+
+/* 📱 Social Section */
+
+.kontak-social {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.kontak-social h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    color: #f6b26b;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-icons a:hover {
+    background: #f6b26b;
+    color: #333;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 🦋 Footer */
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 0.85rem;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+
+/* ✨ Fade In Animation */
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 📱 Responsive Design */
+
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem 1rem;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    nav {
+        gap: 0.3rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+    .content {
+        padding-top: 140px;
+    }
+    .home-title {
+        font-size: 2.5rem;
+        letter-spacing: 4px;
+    }
+    .home-subtitle {
+        font-size: 1.1rem;
+        letter-spacing: 4px;
+    }
+    .destinasi-title,
+    .kuliner-title,
+    .galeri-title,
+    .kontak-title {
+        font-size: 1.8rem;
+        letter-spacing: 3px;
+    }
+    .destinasi-subtitle,
+    .kuliner-subtitle,
+    .galeri-subtitle,
+    .kontak-subtitle {
+        font-size: 1rem;
+    }
+    .destinasi-grid,
+    .kuliner-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    .galeri-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .kontak-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .destinasi-tour,
+    .kuliner-tour,
+    .galeri-cta {
+        margin: 3rem 1rem;
+        padding: 2rem 1rem;
+    }
+    .social-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .social-buttons button {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-title {
+        font-size: 2rem;
+    }
+    .home-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 3px;
+    }
+    .destinasi-title,
+    .kuliner-title,
+    .galeri-title,
+    .kontak-title {
+        font-size: 1.5rem;
+    }
+    .galeri-grid {
+        grid-template-columns: 1fr;
+    }
+}

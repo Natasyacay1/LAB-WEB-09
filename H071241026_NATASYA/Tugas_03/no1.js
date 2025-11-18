@@ -4,7 +4,7 @@ function countEvenNumbers(start, end) {
         return;
     }
 
-    if (start > end) {        //besar dr
+    if (start > end) {
         console.log("Error: Angka mulai tidak boleh lebih besar dari angka akhir!");
         return;
     }
@@ -12,8 +12,8 @@ function countEvenNumbers(start, end) {
     let genap = [];
 
     for (let i = start; i <= end; i++) { //loop dari start ke end
-        if (i % 2 === 0) {           //sisa pembagian i dengan 2
-            genap.push(i); 
+        if (i % 2 === 0) { //sisa pembagian i dengan 2
+            genap.push(i);
         }
     }
 

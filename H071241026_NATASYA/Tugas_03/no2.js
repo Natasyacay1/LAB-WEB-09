@@ -1,22 +1,26 @@
 const readline = require('readline');
 
 const rl = readline.createInterface({
-    input: process.stdin,  //ambil input dari keyboard
-    output: process.stdout  //tampilan hasil
+    input: process.stdin, //ambil input dari keyboard
+    output: process.stdout //tampilan hasil
 });
 
 function hitungDiskon(harga, jenis) {
     let diskon = 0;
 
-    switch (jenis.toLowerCase()) { //ubah huruf besar
+    switch (jenis.toLowerCase()) {
         case "elektronik":
-            diskon = 0.10; break;
+            diskon = 0.10;
+            break;
         case "pakaian":
-            diskon = 0.20; break;
+            diskon = 0.20;
+            break;
         case "makanan":
-            diskon = 0.05; break;
+            diskon = 0.05;
+            break;
         case "lainnya":
-            diskon = 0; break;
+            diskon = 0;
+            break;
         default:
             console.log("Jenis barang tidak dikenali, tidak ada diskon");
             diskon = 0;
@@ -30,7 +34,7 @@ function hitungDiskon(harga, jenis) {
 rl.question("Masukkan harga barang: ", (hargaInput) => {
     let harga = parseFloat(hargaInput);
 
-    if (isNaN(harga) || harga <= 0) {  //angka, harus lebih dari 0
+    if (isNaN(harga) || harga <= 0) { //angka, harus lebih dari 0
         console.log("Input harga tidak valid. Harus berupa angka positif");
         rl.close();
         return;
